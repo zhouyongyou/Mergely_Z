@@ -1,43 +1,9 @@
-// 取得 DOM 元素
-const lhsTextarea = document.getElementById('lhs');
-const rhsTextarea = document.getElementById('rhs');
-const languageSelect = document.getElementById('language-select');
-
-// 使用 CodeMirror 取代 textarea
-const lhsEditor = CodeMirror.fromTextArea(lhsTextarea, {
-  lineNumbers: true,
-  lineWrapping: true,
-  mode: 'javascript',
-});
-
-const rhsEditor = CodeMirror.fromTextArea(rhsTextarea, {
-  lineNumbers: true,
-  lineWrapping: true,
-  mode: 'javascript',
-});
-
 // 初始化 Mergely，啟用行號與自動換行
 const mergely = new Mergely('#compare', {
   line_numbers: true,
   wrap_lines: true,
 });
 
-// 更新比對結果的函式
-function updateDiff() {
-  mergely.lhs(lhsEditor.getValue());
-  mergely.rhs(rhsEditor.getValue());
-}
-
-// 首次載入完成後即執行比對
-mergely.once('updated', updateDiff);
-
-// 在輸入框輸入時即時比對
-lhsEditor.on('change', updateDiff);
-rhsEditor.on('change', updateDiff);
-
-// 切換語言時同步更換語法模式
-languageSelect.addEventListener('change', () => {
-  const mode = languageSelect.value;
-  lhsEditor.setOption('mode', mode);
-  rhsEditor.setOption('mode', mode);
-});
+// 設定預設內容，可直接在編輯器內修改
+mergely.lhs('今天天氣很好，\n適合出門散步。\n');
+mergely.rhs('今天天氣很好，\n非常適合出門散步。\n');
