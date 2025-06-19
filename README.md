@@ -20,5 +20,8 @@ button on the page.
 - Python
 - Solidity
 
+Note: Solidity syntax highlighting uses CodeMirror's `clike` mode as a
+dependency. Ensure the `clike` script is included before the Solidity mode.
+
 Additional CodeMirror modes can be added by including their corresponding
 scripts and options.
