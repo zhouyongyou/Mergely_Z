@@ -19,6 +19,17 @@ textarea {
   box-sizing: border-box;
 }
 
+/* CodeMirror editor style */
+.CodeMirror {
+  flex: 1;
+  height: 150px;
+}
+
+/* language selector */
+#language-select {
+  margin-bottom: 10px;
+}
+
 /* ======== 按鈕樣式 ======== */
 button {
   padding: 8px 16px;
