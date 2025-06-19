@@ -1,22 +1,10 @@
-// 取得 DOM 元素
-const lhsTextarea = document.getElementById('lhs');
-const rhsTextarea = document.getElementById('rhs');
-
 // 初始化 Mergely，啟用行號與自動換行
 const mergely = new Mergely('#compare', {
   line_numbers: true,
   wrap_lines: true,
 });
 
-// 更新比對結果的函式
-function updateDiff() {
-  mergely.lhs(lhsTextarea.value);
-  mergely.rhs(rhsTextarea.value);
-}
+// 設定預設內容，可直接在編輯器內修改
+mergely.lhs('今天天氣很好，\n適合出門散步。\n');
+mergely.rhs('今天天氣很好，\n非常適合出門散步。\n');
 
-// 首次載入完成後即執行比對
-mergely.once('updated', updateDiff);
-
-// 在輸入框輸入時即時比對
-lhsTextarea.addEventListener('input', updateDiff);
-rhsTextarea.addEventListener('input', updateDiff);
