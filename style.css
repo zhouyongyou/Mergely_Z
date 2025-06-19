@@ -1,0 +1,32 @@
+/* ========= 全域樣式 ========= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+/* ======== 輸入框區塊 ======== */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  flex: 1;
+  height: 150px;
+  box-sizing: border-box;
+}
+
+/* ======== 按鈕樣式 ======== */
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+/* ======== Diff 顯示區 ======== */
+#compare {
+  height: 400px;
+  border: 1px solid #ccc;
+}

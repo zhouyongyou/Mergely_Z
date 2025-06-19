@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>專業文字比對工具</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Mergely 5.x CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mergely/5.3.6/mergely.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>專業文字比對工具</h1>
+  <div class="input-container">
+    <textarea id="lhs">今天天氣很好，\n適合出門散步。\n</textarea>
+    <textarea id="rhs">今天天氣很好，\n非常適合出門散步。\n</textarea>
+  </div>
+  <button id="compare-btn">開始比對</button>
+  <div id="compare"></div>
+
+  <!-- Mergely JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mergely/5.3.6/mergely.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
