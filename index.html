@@ -6,10 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Mergely 5.x CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mergely/5.3.6/mergely.min.css" />
+
+  <!-- CodeMirror CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>專業文字比對工具</h1>
+  <label for="language-select">語言：</label>
+  <select id="language-select">
+    <option value="javascript">JavaScript</option>
+    <option value="css">CSS</option>
+    <option value="htmlmixed">HTML</option>
+  </select>
   <div class="input-container">
     <textarea id="lhs">今天天氣很好，\n適合出門散步。\n</textarea>
     <textarea id="rhs">今天天氣很好，\n非常適合出門散步。\n</textarea>
@@ -18,6 +28,14 @@
 
   <!-- Mergely JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mergely/5.3.6/mergely.min.js"></script>
+
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+
   <script src="script.js"></script>
 </body>
 </html>
