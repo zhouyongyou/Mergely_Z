@@ -19,11 +19,20 @@ const rhsEditor = CodeMirror.fromTextArea(rhsTextarea, {
   theme: 'default',
 });
 
-// 初始化 Mergely，啟用行號與自動換行
-const mergely = new Mergely('#compare', {
-  line_numbers: true,
-  wrap_lines: true,
-});
+// 初始化 Mergely，啟用行號與自動換行與語法著色
+let mergely;
+function initMergely(mode) {
+  const container = document.getElementById('compare');
+  container.innerHTML = '';
+  mergely = new Mergely('#compare', {
+    line_numbers: true,
+    wrap_lines: true,
+    cmsettings: { mode },
+  });
+  updateDiff();
+}
+
+initMergely('javascript');
 
 // 更新比對結果
 function updateDiff() {
@@ -43,6 +52,7 @@ languageSelect.addEventListener('change', () => {
   const mode = languageSelect.value;
   lhsEditor.setOption('mode', mode);
   rhsEditor.setOption('mode', mode);
+  initMergely(mode);
 });
 
 // 切換深色模式
